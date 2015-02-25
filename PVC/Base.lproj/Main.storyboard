@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="z3T-Ev-tIg">
+                                <rect key="frame" x="225" y="212" width="150" height="29"/>
+                                <segments>
+                                    <segment title="Horizontal"/>
+                                    <segment title="Vertical"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cKO-vC-IKi">
+                                <rect key="frame" x="258" y="285" width="85" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="85" id="gfA-qb-4Ae"/>
+                                </constraints>
+                                <state key="normal" title="Start Demo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startDemo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x52-j5-2X1"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="WS9-Cg-qBZ">
+                                <rect key="frame" x="225" y="176" width="150" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Wgb-mi-sr2"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="PageCurl"/>
+                                    <segment title="Scroll"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cKO-vC-IKi" firstAttribute="centerX" secondItem="z3T-Ev-tIg" secondAttribute="centerX" id="4Q8-U9-a7r"/>
+                            <constraint firstItem="z3T-Ev-tIg" firstAttribute="top" secondItem="WS9-Cg-qBZ" secondAttribute="bottom" constant="8" symbolic="YES" id="5s0-vw-S7L"/>
+                            <constraint firstItem="WS9-Cg-qBZ" firstAttribute="leading" secondItem="z3T-Ev-tIg" secondAttribute="leading" id="HdZ-rE-AE1"/>
+                            <constraint firstItem="cKO-vC-IKi" firstAttribute="top" secondItem="z3T-Ev-tIg" secondAttribute="bottom" constant="8" symbolic="YES" id="ZSk-gm-D75"/>
+                            <constraint firstItem="WS9-Cg-qBZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZjE-sM-BZI"/>
+                            <constraint firstItem="WS9-Cg-qBZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="138" id="cOb-xl-5KA"/>
+                            <constraint firstItem="WS9-Cg-qBZ" firstAttribute="trailing" secondItem="z3T-Ev-tIg" secondAttribute="trailing" id="s38-xW-Hox"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TransitionType" destination="WS9-Cg-qBZ" id="zSL-Tm-0vv"/>
+                        <outlet property="navOrientation" destination="z3T-Ev-tIg" id="TYC-qG-a0b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="rzH-aN-Rtl">
+            <objects>
+                <viewController storyboardIdentifier="contentView" id="Hl5-Nq-pct" customClass="ContentViewController" customModule="PVC" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uCu-ds-jAk"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tbw-GD-t92"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dww-Xm-5vH">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PKo-jy-XL2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tbw-GD-t92" firstAttribute="top" secondItem="PKo-jy-XL2" secondAttribute="bottom" constant="28" id="Lsx-IC-b0C"/>
+                            <constraint firstItem="PKo-jy-XL2" firstAttribute="top" secondItem="dww-Xm-5vH" secondAttribute="top" id="Muf-2T-Ftn"/>
+                            <constraint firstItem="PKo-jy-XL2" firstAttribute="leading" secondItem="dww-Xm-5vH" secondAttribute="leading" id="wa6-OP-YLj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="PKo-jy-XL2" id="OkZ-cD-dUO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xip-2w-gfq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1212" y="464"/>
+        </scene>
+    </scenes>
+</document>
